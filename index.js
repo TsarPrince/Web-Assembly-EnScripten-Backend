@@ -67,6 +67,6 @@ app.post("/compile", (req, res) => {
   }
 });
 
-app.listen(port, '0.0.0.0', () => {
+app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
