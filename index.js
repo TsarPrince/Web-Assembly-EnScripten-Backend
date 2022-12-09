@@ -6,7 +6,7 @@ const exec = require('child_process').exec;
 
 
 const app = express();
-const port = process.env.PORT || 8080;
+const port = 443;
 
 app.use(bodyParser.json());
 app.use(
