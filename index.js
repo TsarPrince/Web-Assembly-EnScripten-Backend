@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const fs = require("fs");
+const https = require("https");
 const exec = require('child_process').exec;
 
 
@@ -73,4 +74,13 @@ app.get('/.well-known/pki-validation/80355D682AB7852A538151930467D357.txt', (req
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
+});
+
+
+const cert = fs.readFileSync('./cred/certificate.crt');
+const key = fs.readFileSync('./cred/private.key');
+const cred = { cert, key }
+const httpsServer = https.createServer(cred, app);
+httpsServer.listen(443, () => {
+  console.log(`Listening on port 443`);
 });
