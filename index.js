@@ -67,6 +67,10 @@ app.post("/compile", (req, res) => {
   }
 });
 
+app.get('/.well-known/pki-validation/FA5BD25E040A9784C63BFAA123DEFD12.txt', (req, res) => {
+  res.sendFile(__dirname + '/.well-known/pki-validation/FA5BD25E040A9784C63BFAA123DEFD12.txt');
+})
+
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
