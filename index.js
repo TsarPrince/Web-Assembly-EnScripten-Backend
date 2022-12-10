@@ -67,8 +67,8 @@ app.post("/compile", (req, res) => {
   }
 });
 
-app.get('/.well-known/pki-validation/FA5BD25E040A9784C63BFAA123DEFD12.txt', (req, res) => {
-  res.sendFile(__dirname + '/.well-known/pki-validation/FA5BD25E040A9784C63BFAA123DEFD12.txt');
+app.get('/.well-known/pki-validation/80355D682AB7852A538151930467D357.txt', (req, res) => {
+  res.sendFile(__dirname + '/.well-known/pki-validation/80355D682AB7852A538151930467D357.txt');
 })
 
 app.listen(port, () => {
